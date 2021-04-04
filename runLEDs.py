@@ -1,11 +1,10 @@
 import argparse
 from ledPixels import *
 
+
+# default values
 nPix = 20
 ledPin = board.D18
-
-
-leds = ledPixels(nPix, ledPin)
 
 # get number of pixels from the command line
 parser = argparse.ArgumentParser()
@@ -28,4 +27,6 @@ while True:
         print("Quitting.")
         break
     elif q == "g":
+        print("green")
         ledPix.pixels[5] = (0,100,0)
+        ledPix.pixels.show()
