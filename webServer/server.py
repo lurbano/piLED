@@ -149,9 +149,18 @@ class WSHandler(tornado.websocket.WebSocketHandler):
 					# ledPix.setColor(col)
 					ledProg.expect("Ready")
 					ledProg.sendline(json.dumps(msg))
+					
+					# reset the brightness bar to 100 since brightness is overwritten by the change in color
 					m = {
 						"info": "resetBrightness",
 						"brightness": 100
+					}
+					wsCast.write(m)
+
+					# let all other connections know about the new color
+					m = {
+						"info": "resetColor",
+						"color": msg["color"];
 					}
 					wsCast.write(m)
 

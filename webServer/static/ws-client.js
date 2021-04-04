@@ -57,6 +57,9 @@ $(document).ready(function(){
                 let val = sData.brightness;
                 $("#setBrightness").val(val);
               }
+              if (sData.info == 'resetColor'){
+                $("#setColor").val(sData.color);
+              }
               //LEDs (END)
 
             };
