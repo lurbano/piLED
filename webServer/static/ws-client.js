@@ -102,6 +102,13 @@ $(document).ready(function(){
             }
             ws.send(JSON.stringify(msg));
         });
+        $("#clearButton").click(function(){
+            let msg = {
+              "what": "led",
+              "todo": "clear"
+            }
+            ws.send(JSON.stringify(msg));
+        });
         // LEDs (END)
 
       });

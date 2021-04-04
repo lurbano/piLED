@@ -54,5 +54,10 @@ while True:
 				ledPix.setColor(col)
 
 			if msg["todo"] == "setBrightness":
+				ledPix.cancelTask()
 				bright = msg["brightness"]
 				ledPix.setBrightness(bright)
+
+			if msg["todo"] == 'clear':
+				ledPix.cancelTask()
+				ledPix.clear()
