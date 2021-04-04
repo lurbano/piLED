@@ -52,6 +52,11 @@ $(document).ready(function(){
                   console.log("LED's not activated by server. You may need to install the neoPixel library (see http://github.com/lurbano/rpi-led-strip)");
                 }
               }
+
+              if (sData.info == 'setBrightness'){
+                let val = sData.brightness;
+                $("#setBrightness").val(val);
+              }
               //LEDs (END)
 
             };
