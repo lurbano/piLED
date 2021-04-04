@@ -64,7 +64,7 @@ class sensor_T:
 
         if self.ledPix:
             self.ledPix.scale(T_C)
-            
+
         message = {}
         message["S"] = T_C
         message["units"] = '°C'
@@ -170,7 +170,15 @@ class sensor_T:
             self.server.write_message(msg)
 
 
-
+    def runLogger(self):
+        while True:
+            r = input()
+            if r == 'n':
+                print("exiting")
+                break
+            else:
+                T = sensor.read()
+                print(T)
 
 
 
