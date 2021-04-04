@@ -23,29 +23,29 @@ if args.nPix:
 ledPix = ledPixels(nPix, ledPin)
 
 while True:
-    q = input("Ready")
-    print(q)
-    try:
-        msg = json.loads(q)
-    except:
-        msg = None
-        print('{"info", "Input Not JSON"}')
-        if q == "q":
-            print("Quitting.")
-            break
-        elif q == "g":
-            print("green")
-            ledPix.pixels[5] = (0,100,0)
-            ledPix.pixels.show()
+	q = input("Ready")
+	print(q)
+	try:
+		msg = json.loads(q)
+	except:
+		msg = None
+		print('{"info", "Input Not JSON"}')
+		if q == "q":
+			print("Quitting.")
+			break
+		elif q == "g":
+			print("green")
+			ledPix.pixels[5] = (0,100,0)
+			ledPix.pixels.show()
 
-    if msg:
-        if msg["what"] == "green":
-            ledPix.setColor((0,100,0))
-            print("made Green")
+	if msg:
+		if msg["what"] == "green":
+			ledPix.setColor((0,100,0))
+			print("made Green")
 
-        if msg["what"] == "blue":
-            ledPix.setColor((0,0,50))
-            print("made Green")
+		if msg["what"] == "blue":
+			ledPix.setColor((0,0,50))
+			print("made Green")
 
 		if msg["what"] == "setColor":
 			ledPix.cancelTask()
