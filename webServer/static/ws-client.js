@@ -24,7 +24,7 @@ $(document).ready(function(){
             //console.log(evt);
             var sData = JSON.parse(evt.data);
             //console.log(sData);
-            if (sData.sensor !== 'undefined'){
+            if (sData.info !== 'undefined'){
               //console.log(sData.info + "|" + )
 
               if (sData.info == 'hello'){
@@ -38,6 +38,21 @@ $(document).ready(function(){
                 s = sData.s.toString().padStart(2,"0");
                 $("#timeLeft").html(m + ":" + s);
               }
+
+              //LEDs
+              // Activate LEDs
+              if (sData.info == 'LEDsActive'){
+                if (sData.active == "show") {
+                  $("#ledBlock").show();
+                  $("#hasLEDs").prop("checked", true);
+                  $("#nPix").val(sData.nPix);
+                }
+                else {
+                  $("#ledBlock").hide();
+                  console.log("LED's not activated by server. You may need to install the neoPixel library (see http://github.com/lurbano/rpi-led-strip)");
+                }
+              }
+              //LEDs (END)
 
             };
         };

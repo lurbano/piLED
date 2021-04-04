@@ -45,10 +45,11 @@ try:
 			nPix = int(args.nPix)
 		except:
 			print("using default (20) pixels: -nPix 20")
-	ledPix = ledPixels(nPix, ledPin)
+	#ledPix = ledPixels(nPix, ledPin)
+	ledProg = pexpect.spawn('sudo python3 runLEDs.py -n '+nPix, encoding='utf-8')
 except:
-	ledPix = None
-print("LED status:", ledPix)
+	ledProg = None
+print("LED status:", ledProg)
 # LEDs (END)
 
 
@@ -80,7 +81,7 @@ class WSHandler(tornado.websocket.WebSocketHandler):
 		# Broadcaster (END)
 
 		# LEDs (confirm if led's are active)
-		if ledPix:
+		if ledProg:
 			self.write_message({"info": "LEDsActive", "active": "show", "nPix": nPix})
 			print("LED's Active")
 		else:
