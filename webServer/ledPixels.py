@@ -116,14 +116,11 @@ class ledPixels:
     def setBrightness(self, brightness):
         self.brightness = float(brightness) / 100.0
         b = self.brightness
-        if self.task.done():
-            print(f'brightness: {self.brightness}')
-            print(self.oldColors[-1], self.pixels[-1])
+        if not self.task:
             for i in range(self.nPix):
                 c = self.oldColors[i]
                 col = (int(c[0]*b), int(c[1]*b), int(c[2]*b))
                 self.pixels[i] = col
-            print(self.pixels[-1])
             self.pixels.show()
 
     def blue(self):
