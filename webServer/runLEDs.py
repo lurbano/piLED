@@ -23,7 +23,7 @@ if args.nPix:
 ledPix = ledPixels(nPix, ledPin)
 
 # Startup Color
-ledPix[0] = (0,100,0)
+ledPix.light[0] = (0,100,0)
 
 while True:
 	q = input("Ready")
