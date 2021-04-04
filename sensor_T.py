@@ -179,24 +179,3 @@ class sensor_T:
             else:
                 T = self.read()
                 print(T)
-
-
-
-class logger:
-    def __init__(self, info, t, dt, readFunc, caller):
-        self.info = info            # type of data: e.g. "logT"
-        self.t = t                  # how long
-        self.dt = dt                # timestep
-        self.readFunc = readFunc    # function that reads the data from sensor
-        self.caller = caller        # the instance that is using this logger
-
-        self.timeLeft = t
-        self.data = []
-
-    async def logData(self):
-        self.startTime = time.time()
-        while self.timeLeft >= 0:
-            await asyncio.gather(
-                asyncio.sleep(dt),
-                self.readFunc()
-            )
