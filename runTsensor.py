@@ -6,7 +6,7 @@ sensor = sensor_T()
 while True:
     r = raw_input()
     if r == 'n':
-        print "exiting"
+        print("exiting")
         break
     else:
         T = sensor.read()
