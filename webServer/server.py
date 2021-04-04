@@ -16,6 +16,7 @@ import sys
 import argparse
 import asyncio
 import pexpect
+import board
 #from numpy import arange, mean
 import numpy as np
 
