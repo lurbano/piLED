@@ -43,3 +43,8 @@ while True:
     if msg:
         if msg["what"] == "green":
             ledPix.setColor((0,100,0))
+            print("made Green")
+
+        if msg["what"] == "blue":
+            ledPix.setColor((0,0,50))
+            print("made Green")
