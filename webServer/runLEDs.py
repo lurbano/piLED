@@ -55,7 +55,7 @@ while True:
 
 			if msg["todo"] == "setBrightness":
 				ledPix.cancelTask()
-				#bright = msg["brightness"]
+				bright = msg["brightness"]
 				#ledPix.setBrightness(bright)
 				ledPix.setColor((10,0,0))
 
