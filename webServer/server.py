@@ -47,6 +47,7 @@ try:
 	ledPix = ledPixels(nPix, ledPin)
 except:
 	ledPix = None
+print("LED status:", ledPix)
 # LEDs (END)
 
 
