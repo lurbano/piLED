@@ -1,6 +1,6 @@
 import subprocess
 
-p = subprocess.Popen(["sudo", "python3", "runLEDs.py"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, encoding="text")
+p = subprocess.Popen(["sudo", "python3", "runLEDs.py"], stdin=subprocess.PIPE, stdout=subprocess.PIPE,  universal_newlines=True)
 
 q = input("?>")
 
