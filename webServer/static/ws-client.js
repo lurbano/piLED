@@ -53,7 +53,7 @@ $(document).ready(function(){
                 }
               }
 
-              if (sData.info == 'setBrightness'){
+              if (sData.info == 'resetBrightness'){
                 let val = sData.brightness;
                 $("#setBrightness").val(val);
               }
