@@ -5,7 +5,8 @@ p = subprocess.Popen(["sudo", "python3", "runLEDs.py"], stdin=subprocess.PIPE, s
 
 time.sleep(1)
 p.stdin.write("g")
-print(done)
+time.sleep(2)
+print("done")
 
 # q = input("?>")
 #
