@@ -47,6 +47,8 @@ try:
 			print("using default (20) pixels: -nPix 20")
 	#ledPix = ledPixels(nPix, ledPin)
 	ledProg = pexpect.spawn('sudo python3 runLEDs.py -n '+nPix, encoding='utf-8')
+	print("Setting ledProg")
+	print(ledProg)
 except:
 	ledProg = None
 print("LED status:", ledProg)
