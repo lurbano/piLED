@@ -147,14 +147,14 @@ class WSHandler(tornado.websocket.WebSocketHandler):
 				# col = msg["color"]
 				# ledPix.setColor(col)
 				ledProg.expect("Ready")
-				ledProg.sendline(json.dump(msg))
+				ledProg.sendline(json.dumps(msg))
 
 
 			if msg["what"] == "setBrightness":
 				# bright = msg["brightness"]
 				# ledPix.setBrightness(bright)
 				ledProg.expect("Ready")
-				ledProg.sendline(json.dump(msg))
+				ledProg.sendline(json.dumps(msg))
 
 			# if msg["what"] == "interruptButton":
 			# 	ledPix.cancelTask()
