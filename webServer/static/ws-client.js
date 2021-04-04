@@ -18,6 +18,9 @@ $(document).ready(function(){
             $("#signal").html("READY");
             $("#ws-status").html("Connected");
             $("#ws-status").css("background-color", "#afa");
+
+            // Get current configuration
+            
         };
 
         ws.onmessage = function(evt) {

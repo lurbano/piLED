@@ -22,6 +22,9 @@ if args.nPix:
 #Initialize neopixels
 ledPix = ledPixels(nPix, ledPin)
 
+# Startup Color
+ledPix[0] = (0,100,0)
+
 while True:
 	q = input("Ready")
 	print(q)
