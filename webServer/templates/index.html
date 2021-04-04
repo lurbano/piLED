@@ -32,12 +32,18 @@ Connection: <span id="ws-status"> Waiting... </span>
   <div class="ledControls">
     # of LEDs: <input type="number" id="nPix" value="3"><input type="button" id="nPixSet" value="Set">
   </div>
-  <div class="ledControls">
+  <!-- <div class="ledControls">
     Min/Max:
     <input type="number" id="ledMin" value="10" class="ledMinMax"> /
     <input type="number" id="ledMax" value="30" class="ledMinMax">
     <span id="ledMinMaxError"></span>
-  </div>
+  </div> -->
+  <p>
+  Pick Color:
+  <input type="color" id="setColor" value="#ff0000">
+  <p>
+  Brightness:
+  <input type="range" id="setBrightness" min="0" max="100" step="1" value="100">
 </div>
 
 

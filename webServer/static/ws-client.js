@@ -85,6 +85,21 @@ $(document).ready(function(){
             }
         });
 
-
+        # LEDs
+        $("#setColor").change(function(){
+            let msg = {
+              "what": "setColor",
+              "color": this.value
+            }
+            ws.send(JSON.stringify(msg));
+        });
+        $("#setBrightness").change(function(){
+            let msg = {
+              "what": "setBrightness",
+              "brightness": this.value
+            }
+            ws.send(JSON.stringify(msg));
+        });
+        #LEDs (END)
 
       });

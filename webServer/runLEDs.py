@@ -46,3 +46,12 @@ while True:
         if msg["what"] == "blue":
             ledPix.setColor((0,0,50))
             print("made Green")
+
+		if msg["what"] == "setColor":
+			ledPix.cancelTask()
+			col = msg["color"]
+			ledPix.setColor(col)
+
+		if msg["what"] == "setBrightness":
+			bright = msg["brightness"]
+			ledPix.setBrightness(bright)

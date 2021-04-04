@@ -113,51 +113,56 @@ class WSHandler(tornado.websocket.WebSocketHandler):
 
 			# LED STRIP (2/3)
 
-			if msg["what"] == "nPix":
-				print("Resetting nPix")
-				global ledPix
-				ledPix.cancelTask()
-				n = int(msg["n"])
-				ledPix = ledPixels(n, ledPin)
-				ledPix.initCodeColor()
-
-			if msg["what"] == "clearButton":
-				print("Clearing LEDs ")
-				ledPix.cancelTask()
-				ledPix.clear()
-				self.write_message({"info":"cleared"})
-
-			if msg["what"] == "rainbowButton":
-				print("rainbow LEDs ")
-				ledPix.cancelTask()
-				n = int(msg["ct"])
-				s = float(msg["speed"])
-				task = asyncio.create_task(ledPix.aRainbow(n, s))
-				ledPix.task = task
-
-			if msg["what"] == "rainbowForever":
-				print("rainbow LEDs (forever) infinite loop")
-				ledPix.cancelTask()
-				s = float(msg["speed"])
-				task = asyncio.create_task(ledPix.aRainbowForever(s))
-				ledPix.task = task
+			# if msg["what"] == "nPix":
+			# 	print("Resetting nPix")
+			# 	global ledPix
+			# 	ledPix.cancelTask()
+			# 	n = int(msg["n"])
+			# 	ledPix = ledPixels(n, ledPin)
+			# 	ledPix.initCodeColor()
+			#
+			# if msg["what"] == "clearButton":
+			# 	print("Clearing LEDs ")
+			# 	ledPix.cancelTask()
+			# 	ledPix.clear()
+			# 	self.write_message({"info":"cleared"})
+			#
+			# if msg["what"] == "rainbowButton":
+			# 	print("rainbow LEDs ")
+			# 	ledPix.cancelTask()
+			# 	n = int(msg["ct"])
+			# 	s = float(msg["speed"])
+			# 	task = asyncio.create_task(ledPix.aRainbow(n, s))
+			# 	ledPix.task = task
+			#
+			# if msg["what"] == "rainbowForever":
+			# 	print("rainbow LEDs (forever) infinite loop")
+			# 	ledPix.cancelTask()
+			# 	s = float(msg["speed"])
+			# 	task = asyncio.create_task(ledPix.aRainbowForever(s))
+			# 	ledPix.task = task
 
 			if msg["what"] == "setColor":
-				ledPix.cancelTask()
-				col = msg["color"]
-				ledPix.setColor(col)
+				# ledPix.cancelTask()
+				# col = msg["color"]
+				# ledPix.setColor(col)
+				ledProg.expect("Ready")
+				ledProg.sendline(json.dump(msg))
+
 
 			if msg["what"] == "setBrightness":
-				bright = msg["brightness"]
-				ledPix.setBrightness(bright)
+				# bright = msg["brightness"]
+				# ledPix.setBrightness(bright)
+				ledProg.expect("Ready")
+				ledProg.sendline(json.dump(msg))
 
-			if msg["what"] == "interruptButton":
-				ledPix.cancelTask()
-
-			if msg["what"] == "blueButton":
-				print("blue LEDs ")
-				ledPix.cancelTask()
-				ledPix.blue()
+			# if msg["what"] == "interruptButton":
+			# 	ledPix.cancelTask()
+			#
+			# if msg["what"] == "blueButton":
+			# 	print("blue LEDs ")
+			# 	ledPix.cancelTask()
+			# 	ledPix.blue()
 
 			# LED STRIP (END)
 
