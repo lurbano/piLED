@@ -4,7 +4,7 @@ from sensor_T import *
 sensor = sensor_T()
 
 while True:
-    r = raw_input()
+    r = input()
     if r == 'n':
         print("exiting")
         break
