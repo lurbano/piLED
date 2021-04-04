@@ -1,4 +1,5 @@
 import argparse
+import json
 from ledPixels import *
 
 
@@ -23,6 +24,7 @@ ledPix = ledPixels(nPix, ledPin)
 
 while True:
     q = input()
+    msg = json.loads(q)
     if q == "q":
         print("Quitting.")
         break
