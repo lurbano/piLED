@@ -25,6 +25,7 @@ if args.nPix:
 ledPix = ledPixels(nPix, ledPin)
 
 while True:
+    print("Ready")
     q = input()
     print(q)
     try:
