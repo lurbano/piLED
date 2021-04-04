@@ -2,15 +2,15 @@ import pexpect
 import sys
 import time
 
-child = pexpect.spawn('sudo python3 runLEDs.py', encoding='utf-8')
+ledProg = pexpect.spawn('sudo python3 runLEDs.py', encoding='utf-8')
 
 # child.logfile = sys.stdout
 # print('done')
 
 for i in range(10):
-    child.expect("Ready")
-    child.sendline('{"what": "green"}')
+    ledProg.expect("Ready")
+    ledProg.sendline('{"what": "green"}')
     time.sleep(1)
-    child.expect("Ready")
-    child.sendline('{"what": "blue"}')
+    ledProg.expect("Ready")
+    ledProg.sendline('{"what": "blue"}')
     time.sleep(1)

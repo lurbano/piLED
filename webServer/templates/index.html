@@ -1,0 +1,54 @@
+<html>
+
+<head>
+  <title> Light Bar </title>
+  <style>
+    #ws-status {
+      background-color: #faa;
+      padding-inline: 3px;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+    input[type=number]{
+      width: 5em;
+    }
+  </style>
+
+</head>
+
+<body>
+
+Connection: <span id="ws-status"> Waiting... </span>
+<div id='errorInfo'></div>
+
+<input type="button" id="hello" value="Hello World">
+<span id="HelloResponse"></span>
+
+
+<div class="inputBlock">
+  LED's: <input type="checkbox" id="hasLEDs" checked>
+  <br>
+  <div class="ledControls">
+    # of LEDs: <input type="number" id="nPix" value="3"><input type="button" id="nPixSet" value="Set">
+  </div>
+  <div class="ledControls">
+    Min/Max:
+    <input type="number" id="ledMin" value="10" class="ledMinMax"> /
+    <input type="number" id="ledMax" value="30" class="ledMinMax">
+    <span id="ledMinMaxError"></span>
+  </div>
+</div>
+
+
+<br>
+<input type="button" id="reboot" value="Reboot Pi">
+
+
+<!-- Scripts -->
+<script src="{{ static_url("jquery-3.4.1.min.js") }}"></script>
+<script src="{{ static_url("ws-client.js") }}"></script>
+
+</body>
+
+</html>
