@@ -155,7 +155,7 @@ class WSHandler(tornado.websocket.WebSocketHandler):
 					# bright = msg["brightness"]
 					# ledPix.setBrightness(bright)
 					ledProg.expect("Ready")
-					print(json.dumps(msg))
+					print("setBrightness (server)", json.dumps(msg))
 					ledProg.sendline(json.dumps(msg))
 
 				if msg["todo"] == "clear":
