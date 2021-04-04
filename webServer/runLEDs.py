@@ -53,6 +53,6 @@ while True:
 				col = msg["color"]
 				ledPix.setColor(col)
 
-			if msg["what"] == "setBrightness":
+			if msg["todo"] == "setBrightness":
 				bright = msg["brightness"]
 				ledPix.setBrightness(bright)
