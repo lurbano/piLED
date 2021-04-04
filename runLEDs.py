@@ -25,8 +25,7 @@ if args.nPix:
 ledPix = ledPixels(nPix, ledPin)
 
 while True:
-    print("Ready")
-    q = input()
+    q = input("Ready")
     print(q)
     try:
         msg = json.loads(q)
