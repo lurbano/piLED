@@ -37,5 +37,6 @@ while True:
             ledPix.pixels[5] = (0,100,0)
             ledPix.pixels.show()
 
-    if msg["what"] == "green":
-        ledPix.setColor((0,100,0))
+    if msg:
+        if msg["what"] == "green":
+            ledPix.setColor((0,100,0))
