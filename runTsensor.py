@@ -1,6 +1,6 @@
 from sensor_T import *
 
 
-loggerT = logT()
+logT = sensor_T()
 
-loggerT.runLogger()
+logT.runLogger()
