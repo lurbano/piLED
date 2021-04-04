@@ -26,6 +26,7 @@ ledPix = ledPixels(nPix, ledPin)
 
 while True:
     q = input()
+    print(q)
     try:
         msg = json.loads(q)
     except:
