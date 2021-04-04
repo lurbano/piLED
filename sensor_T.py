@@ -177,7 +177,7 @@ class sensor_T:
                 print("exiting")
                 break
             else:
-                T = sensor.read()
+                T = self.read()
                 print(T)
 
 
