@@ -1,7 +1,7 @@
 import pexpect
 
-child = pexpect.spawn('sudo python3 runLEDs.py')
+child = pexpect.spawn('sudo python3 runLEDs.py', encoding='utf-8')
 child.expect("Ready")
-child.sendline('{"info": "green"}', encoding='utf-8')
+child.sendline('{"info": "green"}')
 child.logfile = sys.stdout
 print('done')
