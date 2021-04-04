@@ -51,7 +51,7 @@ try:
 	print(ledProg)
 except:
 	ledProg = None
-ledProg = pexpect.spawn('sudo python3 runLEDs.py -n '+nPix, encoding='utf-8')
+ledProg = pexpect.spawn(f'sudo python3 runLEDs.py -n {nPix}', encoding='utf-8')
 print("LED status:", ledProg)
 # LEDs (END)
 
