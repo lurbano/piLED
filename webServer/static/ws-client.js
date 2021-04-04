@@ -89,7 +89,7 @@ $(document).ready(function(){
         $("#setColor").change(function(){
             let msg = {
               "what": "led",
-              "todo": "setColor"
+              "todo": "setColor",
               "color": this.value
             }
             ws.send(JSON.stringify(msg));
