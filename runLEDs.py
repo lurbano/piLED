@@ -24,11 +24,18 @@ ledPix = ledPixels(nPix, ledPin)
 
 while True:
     q = input()
-    msg = json.loads(q)
-    if q == "q":
-        print("Quitting.")
-        break
-    elif q == "g":
-        print("green")
-        ledPix.pixels[5] = (0,100,0)
-        ledPix.pixels.show()
+    try:
+        msg = json.loads(q)
+    except:
+        msg = None
+        print('{"info", "Input Not JSON"}')
+        if q == "q":
+            print("Quitting.")
+            break
+        elif q == "g":
+            print("green")
+            ledPix.pixels[5] = (0,100,0)
+            ledPix.pixels.show()
+
+    if msg["what"] == "green":
+        ledPix.setColor((0,100,0))
