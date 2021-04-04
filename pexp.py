@@ -1,4 +1,5 @@
 import pexpect
+import sys
 
 child = pexpect.spawn('sudo python3 runLEDs.py', encoding='utf-8')
 child.expect("Ready")
