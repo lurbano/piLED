@@ -34,12 +34,10 @@ wsCast = wsBroadcasterU()
 try:
 	nPix = 20
 	ledPin = board.D18
-	print("nPix", nPix)
 	# get number of pixels from the command line
 	parser = argparse.ArgumentParser()
 	parser.add_argument("-n", "--nPix", help = "Number of pixels")
 	args = parser.parse_args()
-	print(args)
 	if args.nPix:
 		try:
 			nPix = int(args.nPix)
@@ -47,12 +45,11 @@ try:
 			print("using default (20) pixels: -nPix 20")
 	#ledPix = ledPixels(nPix, ledPin)
 	ledProg = pexpect.spawn(f'sudo python3 runLEDs.py -n {nPix}', encoding='utf-8')
-	print("Setting ledProg")
-	print(ledProg)
 except:
 	ledProg = None
 
-print("LED status:", ledProg)
+if not ledProg:
+	print("Problem: ledProg = ", ledProg)
 # LEDs (END)
 
 
