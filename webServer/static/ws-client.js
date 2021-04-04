@@ -85,7 +85,7 @@ $(document).ready(function(){
             }
         });
 
-        # LEDs
+        // LEDs
         $("#setColor").change(function(){
             let msg = {
               "what": "setColor",
@@ -100,6 +100,6 @@ $(document).ready(function(){
             }
             ws.send(JSON.stringify(msg));
         });
-        #LEDs (END)
+        // LEDs (END)
 
       });
