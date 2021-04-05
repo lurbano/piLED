@@ -65,4 +65,7 @@ while True:
 			if msg["todo"] == 'clear':
 				ledPix.cancelTask()
 				ledPix.clear()
-				print("Cleared\n")
+				m = {
+					"info": "Cleared"
+				}
+				print(json.dumps(m)+"\n")
