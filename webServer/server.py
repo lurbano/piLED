@@ -173,16 +173,18 @@ class WSHandler(tornado.websocket.WebSocketHandler):
 					# ledPix.setBrightness(bright)
 					ledProg.expect("Ready")
 					ledProg.sendline(json.dumps(msg))
+					x = ledProg.readline() #gets echo of message sent
+					x = ledProg.readline() # gets response
+					print("Brightness Response:", x)
 
 				if msg["todo"] == "clear":
 					q = ledProg.expect("Ready")
 					ledProg.sendline(json.dumps(msg))
-					print("q:", q)
-					x = ledProg.readline()
-					x = ledProg.readline()
+
+					x = ledProg.readline() #gets echo of message sent
+					x = ledProg.readline() # gets response
 					print("x", x)
-					# y = ledProg.readline()
-					# print("y", y)
+
 
 			# if msg["what"] == "interruptButton":
 			# 	ledPix.cancelTask()
