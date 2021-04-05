@@ -175,8 +175,9 @@ class WSHandler(tornado.websocket.WebSocketHandler):
 					ledProg.sendline(json.dumps(msg))
 
 				if msg["todo"] == "clear":
-					ledProg.expect("Ready")
+					q = ledProg.expect("Ready")
 					ledProg.sendline(json.dumps(msg))
+					print("q:", q)
 					x = ledProg.readline()
 					print("x", x)
 					# y = ledProg.readline()
