@@ -27,8 +27,7 @@ ledPix.light(0, (0,100,0))
 
 while True:
 	q = input("Ready:")
-	print("hello")
-	#print(q)
+
 	try:
 		msg = json.loads(q)
 	except:

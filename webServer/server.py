@@ -179,6 +179,7 @@ class WSHandler(tornado.websocket.WebSocketHandler):
 					ledProg.sendline(json.dumps(msg))
 					print("q:", q)
 					x = ledProg.readline()
+					x = ledProg.readline()
 					print("x", x)
 					# y = ledProg.readline()
 					# print("y", y)
