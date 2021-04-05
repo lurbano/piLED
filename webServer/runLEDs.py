@@ -65,4 +65,4 @@ while True:
 			if msg["todo"] == 'clear':
 				ledPix.cancelTask()
 				ledPix.clear()
-				print("Cleared")
+				print("Cleared\n")
