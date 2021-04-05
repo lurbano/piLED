@@ -176,7 +176,15 @@ class WSHandler(tornado.websocket.WebSocketHandler):
 					x = ledProg.readline() #gets echo of message sent
 					x = ledProg.readline() # gets response
 					print("Brightness Response:", x)
-
+					m = json.loads(x)
+					if m["info"] == "setBrightness":
+						m['info'] = "resetBrightness"
+						m["brightness"] = m["brightness"] * 100
+					# m = {
+					# 	"info": "resetBrightness",
+					# 	"brightness": 100
+					# }
+					wsCast.write(m)
 				if msg["todo"] == "clear":
 					q = ledProg.expect("Ready")
 					ledProg.sendline(json.dumps(msg))
