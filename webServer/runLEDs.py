@@ -61,6 +61,11 @@ while True:
 				bright = msg["brightness"]
 				ledPix.setBrightness(bright)
 				#ledPix.setColor((10,0,0))
+				m = {
+					"info": "setBrightness",
+					"newBrightness": ledPix.brightness
+				}
+				print(json.dumps(m)+"\n")
 
 			if msg["todo"] == 'clear':
 				ledPix.cancelTask()
