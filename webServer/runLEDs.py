@@ -63,7 +63,7 @@ while True:
 				#ledPix.setColor((10,0,0))
 				m = {
 					"info": "setBrightness",
-					"newBrightness": ledPix.brightness
+					"brightness": ledPix.brightness
 				}
 				print(json.dumps(m)+"\n")
 
